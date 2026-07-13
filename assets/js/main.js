@@ -68,7 +68,21 @@ viewMoreBtn.addEventListener('click', () => {
     viewMoreLabel.textContent = projectsExpanded ? 'Show Less' : 'View More Projects';
     viewMoreIcon.style.transform = projectsExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
 });
-const themeToggle = document.getElementById('themeToggle');
+// ─── Scroll Reveal ───────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.12 });
+
+revealEls.forEach(el => revealObserver.observe(el));
+
+// ─── Dark / Light Mode Toggle ────────────────────────────────
 const iconSun  = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
 const htmlEl   = document.documentElement;
