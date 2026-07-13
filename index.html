@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mang Adi - Software / Web Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="assets/css/output.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="font-mono text-sm font-bold tracking-widest text-cyan-accent uppercase">
+                    Mang Adi
+                </a>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center gap-10">
+                    <a href="#home" class="nav-link active text-sm font-medium text-white transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="#projects" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">Projects</a>
+                </div>
+
+                <!-- Contact Button -->
+                <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full hover:bg-cyan-300 transition-colors">
+                    Contact
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark-900/95 backdrop-blur-md border-b border-white/5">
+            <div class="px-6 py-6 space-y-4">
+                <a href="#home" class="block text-sm font-medium text-cyan-accent">Home</a>
+                <a href="#about" class="block text-sm font-medium text-gray-400 hover:text-white">About</a>
+                <a href="#projects" class="block text-sm font-medium text-gray-400 hover:text-white">Projects</a>
+                <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full mt-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Landing Page -->
+    <section id="home" class="min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+            <div class="max-w-3xl">
+                <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-6">
+                    Software / Web Developer
+                </p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8">
+                    Mang Adi builds fast, precise interfaces for the web.
+                </h1>
+                <p class="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl">
+                    I design and build clean, performant products end-to-end — from data models to pixel-level detail. Currently open to new collaborations.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="inline-flex items-center px-8 py-3.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full hover:bg-cyan-300 transition-colors">
+                        View Projects
+                    </a>
+                    <a href="#about" class="inline-flex items-center px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-white/40 hover:bg-white/5 transition-all">
+                        About Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-6">
+                About Me
+            </p>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-16 max-w-3xl">
+                I like building things that feel effortless to use.
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Left Column - Bio -->
+                <div class="space-y-6">
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        I'm Mang Adi, a software and web developer based in Indonesia. I spend most of my time turning rough ideas into working products — sketching data models one day, tuning animation timing the next.
+                    </p>
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        I care about the small details that make software feel trustworthy: fast load times, honest error states, and interfaces that don't make people think twice.
+                    </p>
+                </div>
+
+                <!-- Right Column - Currently Focused On -->
+                <div>
+                    <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-4">
+                        Currently Focused On
+                    </p>
+                    <p class="text-gray-400 text-base leading-relaxed">
+                        Building resilient front-end architecture and exploring how far a small team can push a product with disciplined engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Stack -->
+    <section class="py-16 border-t border-b border-white/5 bg-dark-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-8 text-center">
+                Core Stack
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                    TypeScript
+                </span>
+                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                    React
+                </span>
+                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                    Node.js
+                </span>
+                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                    PostgreSQL
+                </span>
+                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                    Next.js
+                </span>
+                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                    Docker
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-4">
+                My Projects
+            </p>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-16">
+                Selected work, in detail.
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1: Nimbus Analytics -->
+                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative w-full h-full p-6">
+                                <!-- Dashboard mockup -->
+                                <div class="grid grid-cols-3 gap-2 h-full">
+                                    <div class="col-span-2 bg-dark-900/80 rounded-lg border border-cyan-accent/20 p-3">
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <div class="w-2 h-2 rounded-full bg-cyan-accent"></div>
+                                            <div class="w-2 h-2 rounded-full bg-cyan-accent/50"></div>
+                                            <div class="w-2 h-2 rounded-full bg-cyan-accent/30"></div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <div class="h-2 bg-cyan-accent/20 rounded w-3/4"></div>
+                                            <div class="h-2 bg-cyan-accent/10 rounded w-1/2"></div>
+                                            <div class="h-2 bg-cyan-accent/15 rounded w-2/3"></div>
+                                        </div>
+                                        <div class="mt-4 grid grid-cols-2 gap-2">
+                                            <div class="h-16 bg-cyan-accent/10 rounded border border-cyan-accent/20"></div>
+                                            <div class="h-16 bg-cyan-accent/5 rounded border border-cyan-accent/10"></div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-dark-900/80 rounded-lg border border-white/5 p-2 space-y-2">
+                                        <div class="h-8 bg-cyan-accent/10 rounded"></div>
+                                        <div class="h-8 bg-white/5 rounded"></div>
+                                        <div class="h-8 bg-cyan-accent/10 rounded"></div>
+                                        <div class="h-8 bg-white/5 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs font-medium text-cyan-accent">2026</span>
+                            <span class="text-xs text-gray-500">React, Node.js, WebSockets</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Nimbus Analytics</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Real-time analytics dashboard for SaaS teams, built with a focus on live data...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2: Ledger Flow -->
+                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative w-full h-full p-6">
+                                <div class="grid grid-cols-2 gap-3 h-full">
+                                    <div class="bg-dark-900/80 rounded-lg border border-cyan-accent/20 p-3 space-y-2">
+                                        <div class="h-3 bg-cyan-accent/30 rounded w-2/3"></div>
+                                        <div class="h-2 bg-cyan-accent/10 rounded w-full"></div>
+                                        <div class="h-2 bg-cyan-accent/10 rounded w-4/5"></div>
+                                        <div class="h-12 bg-cyan-accent/10 rounded mt-2"></div>
+                                        <div class="h-8 bg-cyan-accent/20 rounded"></div>
+                                    </div>
+                                    <div class="bg-dark-900/80 rounded-lg border border-white/5 p-3 space-y-2">
+                                        <div class="h-3 bg-white/10 rounded w-1/2"></div>
+                                        <div class="h-2 bg-white/5 rounded w-full"></div>
+                                        <div class="h-2 bg-white/5 rounded w-3/4"></div>
+                                        <div class="h-12 bg-white/5 rounded mt-2"></div>
+                                        <div class="h-8 bg-cyan-accent/10 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs font-medium text-cyan-accent">2025</span>
+                            <span class="text-xs text-gray-500">Next.js, PostgreSQL, Stripe</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Ledger Flow</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            A lightweight invoicing and expense platform for freelancers, with...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3: Pulse CMS -->
+                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative w-full h-full p-6 flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="font-mono text-5xl md:text-6xl font-light text-white/20 tracking-wider">
+                                        00:00.00
+                                    </div>
+                                    <div class="mt-4 flex justify-center gap-4">
+                                        <div class="w-12 h-1 bg-white/10 rounded"></div>
+                                        <div class="w-12 h-1 bg-white/10 rounded"></div>
+                                        <div class="w-12 h-1 bg-white/10 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs font-medium text-cyan-accent">2025</span>
+                            <span class="text-xs text-gray-500">Vue, GraphQL, Tailwind</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Pulse CMS</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            A headless content system with a component-driven editor, built for...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 4: Orbit Chat -->
+                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative w-full h-full p-6">
+                                <div class="bg-dark-900/80 rounded-lg border border-white/10 p-4 h-full flex flex-col">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <div class="w-8 h-8 rounded-full bg-cyan-accent/20"></div>
+                                        <div class="h-3 bg-white/10 rounded w-24"></div>
+                                    </div>
+                                    <div class="space-y-3 flex-1">
+                                        <div class="flex gap-2">
+                                            <div class="w-6 h-6 rounded-full bg-cyan-accent/10 flex-shrink-0"></div>
+                                            <div class="bg-cyan-accent/10 rounded-lg rounded-tl-none p-2 max-w-[70%]">
+                                                <div class="h-2 bg-cyan-accent/30 rounded w-full"></div>
+                                                <div class="h-2 bg-cyan-accent/20 rounded w-3/4 mt-1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2 justify-end">
+                                            <div class="bg-white/5 rounded-lg rounded-tr-none p-2 max-w-[70%]">
+                                                <div class="h-2 bg-white/20 rounded w-full"></div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <div class="w-6 h-6 rounded-full bg-cyan-accent/10 flex-shrink-0"></div>
+                                            <div class="bg-cyan-accent/10 rounded-lg rounded-tl-none p-2 max-w-[70%]">
+                                                <div class="h-2 bg-cyan-accent/30 rounded w-2/3"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 h-8 bg-white/5 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs font-medium text-cyan-accent">2024</span>
+                            <span class="text-xs text-gray-500">React Native, Firebase</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Orbit Chat</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            A minimal team messaging app with threaded channels, presence indicator...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 5: Vector Grid -->
+                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                    <div class="aspect-[4/3] bg-gradient-to-br from-dark-700 to-dark-900 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="relative w-full h-full p-6 flex items-center justify-center">
+                                <div class="relative">
+                                    <!-- Phone mockup -->
+                                    <div class="w-32 h-56 bg-dark-900 rounded-2xl border-2 border-white/20 p-2 relative">
+                                        <div class="absolute top-1 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-white/20 rounded-full"></div>
+                                        <div class="mt-4 space-y-2 px-1">
+                                            <div class="h-6 bg-cyan-accent/30 rounded"></div>
+                                            <div class="h-6 bg-cyan-accent/20 rounded"></div>
+                                            <div class="h-6 bg-white/10 rounded"></div>
+                                            <div class="h-6 bg-cyan-accent/10 rounded"></div>
+                                            <div class="h-6 bg-white/5 rounded"></div>
+                                            <div class="h-6 bg-cyan-accent/15 rounded"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Second phone -->
+                                    <div class="absolute -right-8 top-4 w-28 h-52 bg-dark-900 rounded-2xl border-2 border-white/10 p-2 opacity-60">
+                                        <div class="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-1.5 bg-white/10 rounded-full"></div>
+                                        <div class="mt-4 space-y-2 px-1">
+                                            <div class="h-5 bg-white/10 rounded"></div>
+                                            <div class="h-5 bg-cyan-accent/10 rounded"></div>
+                                            <div class="h-5 bg-white/5 rounded"></div>
+                                            <div class="h-5 bg-cyan-accent/20 rounded"></div>
+                                            <div class="h-5 bg-white/10 rounded"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="font-mono text-xs font-medium text-cyan-accent">2024</span>
+                            <span class="text-xs text-gray-500">TypeScript, Canvas API</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Vector Grid</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            An internal design-system tool for generating and previewing grid-based...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-24 lg:py-32 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8">
+                Have a project in mind?
+            </h2>
+            <a href="mailto:hello@mangadi.dev" class="inline-flex items-center px-10 py-4 bg-cyan-accent text-dark-900 text-base font-semibold rounded-full hover:bg-cyan-300 transition-colors">
+                Get in touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/5 bg-dark-800/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <p class="text-white font-bold text-lg mb-1">Mang Adi</p>
+                    <p class="font-mono text-xs tracking-wider text-cyan-accent uppercase">
+                        © 2026 — Software / Web Developer
+                    </p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-gray-500 hover:text-cyan-accent transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-cyan-accent transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-cyan-accent transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
