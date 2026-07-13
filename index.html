@@ -190,21 +190,16 @@
                 All of my work.
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+
                 <!-- Project 1: Nimbus Analytics -->
                 <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
                     <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
                         <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/nimbus.png" -->
-                        <img
-                            src=""
-                            alt="Nimbus Analytics preview"
-                            class="project-img w-full h-full object-cover"
-                        >
-                        <!-- Placeholder tampil saat src kosong / gambar belum diisi -->
+                        <img src="" alt="Nimbus Analytics preview" class="project-img w-full h-full object-cover">
                         <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
                             <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
@@ -225,15 +220,10 @@
                 <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
                     <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
                         <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/ledger.png" -->
-                        <img
-                            src=""
-                            alt="Ledger Flow preview"
-                            class="project-img w-full h-full object-cover"
-                        >
+                        <img src="" alt="Ledger Flow preview" class="project-img w-full h-full object-cover">
                         <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
                             <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
@@ -254,15 +244,10 @@
                 <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
                     <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
                         <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/pulse.png" -->
-                        <img
-                            src=""
-                            alt="Pulse CMS preview"
-                            class="project-img w-full h-full object-cover"
-                        >
+                        <img src="" alt="Pulse CMS preview" class="project-img w-full h-full object-cover">
                         <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
                             <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
@@ -279,19 +264,15 @@
                     </div>
                 </div>
 
+                <!-- Project 4–6: tersembunyi, muncul setelah klik "View More" -->
                 <!-- Project 4: Orbit Chat -->
-                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                <div class="project-card project-extra bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group hidden">
                     <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
                         <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/orbit.png" -->
-                        <img
-                            src=""
-                            alt="Orbit Chat preview"
-                            class="project-img w-full h-full object-cover"
-                        >
+                        <img src="" alt="Orbit Chat preview" class="project-img w-full h-full object-cover">
                         <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
                             <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
@@ -308,16 +289,14 @@
                     </div>
                 </div>
 
-                <!-- Project 5: Orbit Chat -->
-                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                <!-- Project 5 -->
+                <div class="project-card project-extra bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group hidden">
                     <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
-                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/orbit.png" -->
+                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/orbit2.png" -->
                         <img src="" alt="Orbit Chat preview" class="project-img w-full h-full object-cover">
-                        <div
-                            class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
+                        <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
                             <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
@@ -335,18 +314,13 @@
                 </div>
 
                 <!-- Project 6: Vector Grid -->
-                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group">
+                <div class="project-card project-extra bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group hidden">
                     <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
                         <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/vector.png" -->
-                        <img
-                            src=""
-                            alt="Vector Grid preview"
-                            class="project-img w-full h-full object-cover"
-                        >
+                        <img src="" alt="Vector Grid preview" class="project-img w-full h-full object-cover">
                         <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
                             <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                             <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
@@ -362,9 +336,22 @@
                         </p>
                     </div>
                 </div>
+
             </div>
+
+            <!-- View More / Show Less Button -->
+            <div class="flex justify-center mt-12">
+                <button id="viewMoreBtn" class="inline-flex items-center gap-2 px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-cyan-accent hover:text-cyan-accent transition-all">
+                    <span id="viewMoreLabel">View More Projects</span>
+                    <svg id="viewMoreIcon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+            </div>
+
         </div>
     </section>
+                
 
     <!-- CTA Section -->
     <section id="contact" class="py-24 lg:py-32 border-t border-white/5">
