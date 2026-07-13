@@ -167,7 +167,7 @@
 .light #home h1 {
   color: #0a0e17;
 }
-.light #home p {
+.light #home p:not(.text-cyan-accent) {
   color: #4b5563;
 }
 .light #home .border-white\/20 {
@@ -182,7 +182,7 @@
 .light #about h2 {
   color: #0a0e17;
 }
-.light #about p {
+.light #about p:not(.text-cyan-accent) {
   color: #4b5563;
 }
 
