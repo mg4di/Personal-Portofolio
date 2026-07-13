@@ -35,3 +35,32 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// ─── Dark / Light Mode Toggle ────────────────────────────────
+const themeToggle = document.getElementById('themeToggle');
+const iconSun  = document.getElementById('iconSun');
+const iconMoon = document.getElementById('iconMoon');
+const htmlEl   = document.documentElement;
+
+// Load saved preference (default: dark)
+const savedTheme = localStorage.getItem('theme') || 'dark';
+applyTheme(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+    const isDark = htmlEl.classList.contains('light') === false;
+    applyTheme(isDark ? 'light' : 'dark');
+});
+
+function applyTheme(theme) {
+    if (theme === 'light') {
+        htmlEl.classList.add('light');
+        iconSun.classList.add('hidden');
+        iconMoon.classList.remove('hidden');
+        localStorage.setItem('theme', 'light');
+    } else {
+        htmlEl.classList.remove('light');
+        iconSun.classList.remove('hidden');
+        iconMoon.classList.add('hidden');
+        localStorage.setItem('theme', 'dark');
+    }
+}
