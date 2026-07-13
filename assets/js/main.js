@@ -35,7 +35,39 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ─── Dark / Light Mode Toggle ────────────────────────────────
+// ─── View More Projects ──────────────────────────────────────
+const viewMoreBtn = document.getElementById('viewMoreBtn');
+const viewMoreLabel = document.getElementById('viewMoreLabel');
+const viewMoreIcon = document.getElementById('viewMoreIcon');
+const extraProjects = document.querySelectorAll('.project-extra');
+
+let projectsExpanded = false;
+
+viewMoreBtn.addEventListener('click', () => {
+    projectsExpanded = !projectsExpanded;
+
+    extraProjects.forEach((card, i) => {
+        if (projectsExpanded) {
+            // Tampilkan dengan animasi fade-in bertahap
+            card.classList.remove('hidden');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(16px)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, i * 80);
+        } else {
+            card.classList.add('hidden');
+            card.style.opacity = '';
+            card.style.transform = '';
+            card.style.transition = '';
+        }
+    });
+
+    viewMoreLabel.textContent = projectsExpanded ? 'Show Less' : 'View More Projects';
+    viewMoreIcon.style.transform = projectsExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
+});
 const themeToggle = document.getElementById('themeToggle');
 const iconSun  = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
