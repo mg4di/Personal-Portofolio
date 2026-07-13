@@ -11,31 +11,80 @@
   /* Custom Fonts */
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Outfit", sans-serif;
 }
 
-/* Override CSS variables di light mode — ini yang mengubah semua utility Tailwind sekaligus */
+/* ─── Light Mode variable overrides ─────────────────────────── */
 .light {
   --color-cyan-accent: #0369a1;
 }
 
+/* ─── Grain overlay (fixed, pointer-events-none) ────────────── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+.light body::after {
+  opacity: 0.025;
+}
+
 @layer components {
+
+  /* ─── Scroll reveal ────────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+
+  /* ─── Project cards ─────────────────────────────────────────── */
   .project-card {
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Elevation via background only — no border */
   }
-
   .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(77, 232, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(10, 14, 23, 0.6), 0 0 0 1px rgba(77, 232, 255, 0.08);
+  }
+  .project-card:focus-visible {
+    outline: 2px solid var(--color-cyan-accent);
+    outline-offset: 2px;
   }
 
-  /* Project image placeholder */
+  /* ─── Project image placeholder ────────────────────────────── */
   .project-img-wrap {
     background-color: #141b2d;
   }
+  .project-img {
+    display: block;
+  }
+  .project-img[src=""],
+  .project-img:not([src]) {
+    opacity: 0;
+  }
+  .project-img[src=""] ~ .project-img-placeholder,
+  .project-img:not([src]) ~ .project-img-placeholder {
+    opacity: 1;
+  }
+  .project-img-placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: var(--color-cyan-accent);
+  }
 
-  /* Hero photo placeholder */
+  /* ─── Hero photo ────────────────────────────────────────────── */
   .hero-photo {
     display: block;
     position: relative;
@@ -50,49 +99,15 @@
     background-color: rgba(20, 27, 45, 0.6);
     z-index: 0;
   }
-  /* Hide placeholder when photo is loaded */
   .hero-photo:not([src=""]) + .hero-photo-placeholder {
     opacity: 0;
     pointer-events: none;
   }
 
-  /* Light mode hero photo placeholder */
-  .light .hero-photo-placeholder {
-    background-color: rgba(229, 231, 235, 0.6);
-    border-color: rgba(0, 0, 0, 0.15);
-  }
-
-  /* Hide broken-image icon on empty src */
-  .project-img {
-    display: block;
-  }
-  .project-img[src=""],
-  .project-img:not([src]) {
-    opacity: 0;
-  }
-
-  /* Show placeholder when image src is empty */
-  .project-img[src=""] ~ .project-img-placeholder,
-  .project-img:not([src]) ~ .project-img-placeholder {
-    opacity: 1;
-  }
-
-  /* Hide placeholder when image is loaded */
-  .project-img-placeholder {
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    color: #4de8ff;
-  }
-
-  /* Always show placeholder during hover for empty images */
-  .project-img[src=""] ~ .project-img-placeholder {
-    opacity: 1;
-  }
-
+  /* ─── Nav links ─────────────────────────────────────────────── */
   .nav-link {
     position: relative;
   }
-
   .nav-link::after {
     content: "";
     position: absolute;
@@ -100,20 +115,49 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #4de8ff;
+    background-color: var(--color-cyan-accent);
     transition: width 0.3s ease;
   }
-
   .nav-link:hover::after {
     width: 100%;
   }
-
   .nav-link.active {
-    color: #4de8ff;
+    color: var(--color-cyan-accent);
   }
-
   .nav-link.active::after {
     width: 100%;
+  }
+  /* Focus ring for nav links */
+  .nav-link:focus-visible {
+    outline: 2px solid var(--color-cyan-accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  /* ─── Theme toggle button ───────────────────────────────────── */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  }
+  .theme-toggle:hover {
+    border-color: var(--color-cyan-accent);
+    color: var(--color-cyan-accent);
+  }
+  .theme-toggle:focus-visible {
+    outline: 2px solid var(--color-cyan-accent);
+    outline-offset: 2px;
+  }
+  .theme-toggle:active {
+    transform: scale(0.95);
   }
 }
 
@@ -121,17 +165,46 @@
   body {
     background-color: #0a0e17;
     color: #ffffff;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Ambient glow behind hero */
+  #home {
+    position: relative;
+    overflow: hidden;
+  }
+  #home::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(77, 232, 255, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  #home > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Focus outline global fallback */
+  :focus-visible {
+    outline: 2px solid var(--color-cyan-accent);
+    outline-offset: 2px;
   }
 }
 
-/* ─── Light Mode ─────────────────────────────────────────── */
-/* Pakai !important pada body agar menang atas @layer base Tailwind */
+/* ─── Light Mode ─────────────────────────────────────────────── */
 .light body {
   background-color: #f5f7fa !important;
   color: #0a0e17 !important;
+}
+
+/* Ambient glow: lighter in light mode */
+.light #home::before {
+  background: radial-gradient(circle, rgba(3, 105, 161, 0.06) 0%, transparent 70%);
 }
 
 /* Navbar */
@@ -148,7 +221,7 @@
   color: #0a0e17;
 }
 .light .nav-link.active {
-  color: #0891b2;
+  color: #0369a1;
 }
 
 /* Mobile menu */
@@ -178,6 +251,15 @@
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+/* Hero photo placeholder */
+.light .hero-photo-placeholder {
+  background-color: rgba(229, 231, 235, 0.6);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.light .hero-photo-placeholder svg {
+  color: #0369a1;
+}
+
 /* About */
 .light #about h2 {
   color: #0a0e17;
@@ -205,11 +287,10 @@
   background-color: #ffffff;
 }
 .light .project-card {
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
 }
 .light .project-card:hover {
-  box-shadow: 0 8px 30px rgba(77, 232, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(3, 105, 161, 0.12), 0 0 0 1px rgba(3, 105, 161, 0.1);
 }
 .light .bg-dark-900\/80 {
   background-color: rgba(240, 242, 245, 0.8);
@@ -230,12 +311,23 @@
   color: #111827;
 }
 
+/* Project image placeholder */
+.light .project-img-wrap {
+  background-color: #e5e7eb;
+}
+.light .project-img-placeholder {
+  color: #0369a1;
+}
+
 /* CTA / Contact */
 .light #contact {
   border-top-color: rgba(0, 0, 0, 0.07);
 }
 .light #contact h2 {
   color: #0a0e17;
+}
+.light #contact p {
+  color: #6b7280;
 }
 
 /* Footer */
@@ -250,32 +342,12 @@
   color: #9ca3af;
 }
 
-/* Theme toggle button */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  transition:
-    border-color 0.2s ease,
-    color 0.2s ease,
-    background-color 0.2s ease;
-}
-.theme-toggle:hover {
-  border-color: #4de8ff;
-  color: #4de8ff;
-}
+/* Theme toggle in light mode */
 .light .theme-toggle {
   border-color: rgba(0, 0, 0, 0.15);
   color: #374151;
 }
 .light .theme-toggle:hover {
-  border-color: #0891b2;
-  color: #0891b2;
+  border-color: #0369a1;
+  color: #0369a1;
 }
