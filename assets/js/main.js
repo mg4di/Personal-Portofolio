@@ -53,10 +53,10 @@ viewMoreBtn.addEventListener('click', () => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(16px)';
             setTimeout(() => {
-                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
-            }, i * 80);
+            }, i * 140);
         } else {
             card.classList.add('hidden');
             card.style.opacity = '';
@@ -68,19 +68,15 @@ viewMoreBtn.addEventListener('click', () => {
     viewMoreLabel.textContent = projectsExpanded ? 'Show Less' : 'View More Projects';
     viewMoreIcon.style.transform = projectsExpanded ? 'rotate(180deg)' : 'rotate(0deg)';
 });
-// ─── Scroll Reveal ───────────────────────────────────────────
-const revealEls = document.querySelectorAll('.reveal');
+// ─── AOS Init ────────────────────────────────────────────────
+AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 80,
+});
 
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.12 });
-
-revealEls.forEach(el => revealObserver.observe(el));
+// ─── Scroll Reveal (removed — using AOS) ─────────────────────
 
 // ─── Dark / Light Mode Toggle ────────────────────────────────
 const iconSun  = document.getElementById('iconSun');
