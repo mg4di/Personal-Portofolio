@@ -30,6 +30,33 @@
     background-color: #141b2d;
   }
 
+  /* Hero photo placeholder */
+  .hero-photo {
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-photo[src=""],
+  .hero-photo:not([src]) {
+    opacity: 0;
+  }
+  .hero-photo-placeholder {
+    transition: opacity 0.2s ease;
+    background-color: rgba(20, 27, 45, 0.6);
+    z-index: 0;
+  }
+  /* Hide placeholder when photo is loaded */
+  .hero-photo:not([src=""]) + .hero-photo-placeholder {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Light mode hero photo placeholder */
+  .light .hero-photo-placeholder {
+    background-color: rgba(229, 231, 235, 0.6);
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+
   /* Hide broken-image icon on empty src */
   .project-img {
     display: block;
@@ -89,7 +116,9 @@
   body {
     background-color: #0a0e17;
     color: #ffffff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
   }
 }
 
@@ -227,7 +256,10 @@
   background: transparent;
   color: #fff;
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
 .theme-toggle:hover {
   border-color: #4de8ff;
