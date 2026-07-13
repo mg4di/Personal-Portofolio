@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mang Adi - Software / Web Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Mang Adi — Software & Web Developer</title>
+    <meta name="description" content="Mang Adi is a software and web developer based in Indonesia, building fast, precise interfaces from data models to pixel-level detail.">
+    <meta property="og:title" content="Mang Adi — Software & Web Developer">
+    <meta property="og:description" content="Building fast, precise interfaces for the web.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0e17'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='18' fill='%234de8ff'>M</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="assets/css/output.css" rel="stylesheet">
 </head>
 <body class="font-sans antialiased">
@@ -67,37 +72,37 @@
     </nav>
 
     <!-- Hero / Landing Page -->
-    <section id="home" class="min-h-screen flex items-center pt-20">
+    <section id="home" class="min-h-dvh flex items-center pt-20">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
             <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
 
                 <!-- Left: Text -->
-                <div class="flex-1 max-w-2xl">
+                <div class="flex-1 max-w-2xl reveal">
                     <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-6">
                         Software / Web Developer
                     </p>
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8">
+                    <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-8" style="text-wrap:balance">
                         Builds fast, precise interfaces for the web.
                     </h1>
-                    <p class="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl">
+                    <p class="text-lg text-gray-400 leading-relaxed mb-10 max-w-xl">
                         I design and build clean, performant products end-to-end — from data models to pixel-level detail. Currently open to new collaborations.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="inline-flex items-center px-8 py-3.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full hover:bg-cyan-300 transition-colors">
-                            View Projects
+                        <a href="#projects" class="inline-flex items-center px-8 py-3.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full hover:bg-cyan-300 active:scale-95 transition-all">
+                            View projects
                         </a>
-                        <a href="#about" class="inline-flex items-center px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-white/40 hover:bg-white/5 transition-all">
-                            About Me
+                        <a href="#about" class="inline-flex items-center px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-white/40 hover:bg-white/5 active:scale-95 transition-all">
+                            About me
                         </a>
                     </div>
                 </div>
 
                 <!-- Right: Photo -->
-                <div class="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative">
+                <div class="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative reveal reveal-delay-1">
                     <img
                         id="heroPhoto"
                         src="assets/images/IMG_20230406_184900.jpg"
-                        alt="Mang Adi photo"
+                        alt="Mang Adi, software and web developer based in Indonesia"
                         class="hero-photo w-full h-full object-cover rounded-2xl"
                     >
                     <!-- Placeholder tampil saat src kosong -->
@@ -120,16 +125,16 @@
     <!-- About Me -->
     <section id="about" class="py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-6">
-                About Me
+            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-6 reveal">
+                About me
             </p>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-16 max-w-3xl">
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-16 max-w-3xl reveal" style="text-wrap:balance">
                 I like building things that feel effortless to use.
             </h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
                 <!-- Left Column - Bio -->
-                <div class="space-y-6">
+                <div class="space-y-6 reveal">
                     <p class="text-gray-400 text-base leading-relaxed">
                         I'm Mang Adi, a software and web developer based in Indonesia. I spend most of my time turning rough ideas into working products — sketching data models one day, tuning animation timing the next.
                     </p>
@@ -139,9 +144,9 @@
                 </div>
 
                 <!-- Right Column - Currently Focused On -->
-                <div>
+                <div class="reveal reveal-delay-1">
                     <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-4">
-                        Currently Focused On
+                        Currently focused on
                     </p>
                     <p class="text-gray-400 text-base leading-relaxed">
                         Building resilient front-end architecture and exploring how far a small team can push a product with disciplined engineering.
@@ -152,28 +157,28 @@
     </section>
 
     <!-- Core Stack -->
-    <section class="py-16 border-t border-b border-white/5 bg-dark-800/50">
+    <section id="stack" class="py-16 border-t border-b border-white/5 bg-dark-800/50">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-8 text-center">
-                Core Stack
+            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-8 text-center reveal">
+                Core stack
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+            <div class="flex flex-wrap justify-center gap-3 reveal">
+                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
                     TypeScript
                 </span>
-                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
                     React
                 </span>
-                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
                     Node.js
                 </span>
-                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
                     PostgreSQL
                 </span>
-                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
                     Next.js
                 </span>
-                <span class="px-6 py-2.5 border border-white/15 rounded-full text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
+                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
                     Docker
                 </span>
             </div>
@@ -183,10 +188,11 @@
     <!-- Projects -->
     <section id="projects" class="py-24 lg:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-4">
-                My Projects
+            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-4 reveal">
+                My projects
             </p>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-16">
+            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-16 reveal" style="text-wrap:balance">
+                Selected work, in detail.
                 All of my work.
             </h2>
 
@@ -356,10 +362,11 @@
     <!-- CTA Section -->
     <section id="contact" class="py-24 lg:py-32 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-8">
+            <h2 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight mb-4 reveal" style="text-wrap:balance">
                 Have a project in mind?
             </h2>
-            <a href="mailto:hello@mangadi.dev" class="inline-flex items-center px-10 py-4 bg-cyan-accent text-dark-900 text-base font-semibold rounded-full hover:bg-cyan-300 transition-colors">
+            <p class="text-gray-400 mb-10 reveal reveal-delay-1">Let's talk about it.</p>
+            <a href="mailto:hello@mangadi.dev" class="inline-flex items-center px-10 py-4 bg-cyan-accent text-dark-900 text-base font-semibold rounded-full hover:bg-cyan-300 active:scale-95 transition-all reveal reveal-delay-2">
                 Get in touch
             </a>
         </div>
