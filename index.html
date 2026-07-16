@@ -64,7 +64,7 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-dark-900/95 backdrop-blur-md border-b border-white/5">
             <div class="px-6 py-6 space-y-4">
-                <a href="#home" class="block text-sm font-medium text-cyan-accent">Home</a>
+                <a href="#home" class="block text-sm font-medium text-gray-400">Home</a>
                 <a href="#about" class="block text-sm font-medium text-gray-400 hover:text-white">About</a>
                 <a href="#projects" class="block text-sm font-medium text-gray-400 hover:text-white">Projects</a>
                 <a href="#contact" class="inline-flex items-center px-6 py-2.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full mt-2">Contact</a>
@@ -186,177 +186,293 @@
         </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="py-24 lg:py-32">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-4" data-aos="fade-up" data-aos-duration="800">
-                My projects
-            </p>
-            <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-16" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" style="text-wrap:balance">
-                Selected work, in detail.
-            </h2>
+<!-- Projects Section -->
+<section id="projects" class="py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-4" data-aos="fade-up">
+            My projects
+        </p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-16 font-display" data-aos="fade-up"
+            data-aos-delay="100">
+            Selected work, in detail.
+        </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
-
-                <!-- Project 1: Nimbus Analytics -->
-                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="0">
-                    <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
-                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/nimbus.png" -->
-                        <img src="" alt="Nimbus Analytics preview" class="project-img w-full h-full object-cover">
-                        <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
-                            <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1: Nimbus Analytics -->
+            <a href="project.html"
+                class="project-card group block bg-dark-800 border border-white/10 rounded-2xl overflow-hidden"
+                data-aos="fade-up" data-aos-delay="200">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <!-- Project Image -->
+                    <div class="project-img-wrap absolute inset-0">
+                        <img src="images/nimbus-analytics.jpg" alt="Nimbus Analytics"
+                            class="project-img w-full h-full object-cover transition-all duration-300 group-hover:blur-md group-hover:scale-105">
+                        <div class="project-img-placeholder absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-mono text-xs font-medium text-cyan-accent">2026</span>
-                            <span class="text-xs text-gray-500">React, Node.js, WebSockets</span>
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-center px-4">
+                            <span class="inline-flex items-center gap-2 text-cyan-accent font-semibold text-lg">
+                                View Detail Project
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Nimbus Analytics</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            Real-time analytics dashboard for SaaS teams, built with a focus on live data...
-                        </p>
                     </div>
                 </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="font-mono text-xs font-medium text-cyan-accent">2026</span>
+                        <span class="text-gray-600">•</span>
+                        <span class="text-xs text-gray-400">React, Node.js, WebSockets</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-display group-hover:text-cyan-accent transition-colors">
+                        Nimbus Analytics</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Real-time analytics dashboard for SaaS teams, built with a focus on live data...
+                    </p>
+                </div>
+            </a>
 
-                <!-- Project 2: Ledger Flow -->
-                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                    <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
-                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/ledger.png" -->
-                        <img src="" alt="Ledger Flow preview" class="project-img w-full h-full object-cover">
-                        <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
-                            <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            <!-- Project 2: Ledger Flow -->
+            <a href="project.html"
+                class="project-card group block bg-dark-800 border border-white/10 rounded-2xl overflow-hidden"
+                data-aos="fade-up" data-aos-delay="300">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <!-- Project Image -->
+                    <div class="project-img-wrap absolute inset-0">
+                        <img src="images/ledger-flow.jpg" alt="Ledger Flow"
+                            class="project-img w-full h-full object-cover transition-all duration-300 group-hover:blur-md group-hover:scale-105">
+                        <div class="project-img-placeholder absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-mono text-xs font-medium text-cyan-accent">2025</span>
-                            <span class="text-xs text-gray-500">Next.js, PostgreSQL, Stripe</span>
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-center px-4">
+                            <span class="inline-flex items-center gap-2 text-cyan-accent font-semibold text-lg">
+                                View Detail Project
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Ledger Flow</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            A lightweight invoicing and expense platform for freelancers, with...
-                        </p>
                     </div>
                 </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="font-mono text-xs font-medium text-cyan-accent">2025</span>
+                        <span class="text-gray-600">•</span>
+                        <span class="text-xs text-gray-400">Next.js, PostgreSQL, Stripe</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-display group-hover:text-cyan-accent transition-colors">
+                        Ledger Flow</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        A lightweight invoicing and expense platform for freelancers, with...
+                    </p>
+                </div>
+            </a>
 
-                <!-- Project 3: Pulse CMS -->
-                <div class="project-card bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                    <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
-                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/pulse.png" -->
-                        <img src="" alt="Pulse CMS preview" class="project-img w-full h-full object-cover">
-                        <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
-                            <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            <!-- Project 3: Pulse CMS -->
+            <a href="project.html"
+                class="project-card group block bg-dark-800 border border-white/10 rounded-2xl overflow-hidden"
+                data-aos="fade-up" data-aos-delay="400">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <!-- Project Image -->
+                    <div class="project-img-wrap absolute inset-0">
+                        <img src="images/pulse-cms.jpg" alt="Pulse CMS"
+                            class="project-img w-full h-full object-cover transition-all duration-300 group-hover:blur-md group-hover:scale-105">
+                        <div class="project-img-placeholder absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-mono text-xs font-medium text-cyan-accent">2025</span>
-                            <span class="text-xs text-gray-500">Vue, GraphQL, Tailwind</span>
+                    <!-- Overlay -->
+                    <div
+                        class="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-center px-4">
+                            <span class="inline-flex items-center gap-2 text-cyan-accent font-semibold text-lg">
+                                View Detail Project
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Pulse CMS</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            A headless content system with a component-driven editor, built for...
-                        </p>
                     </div>
                 </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="font-mono text-xs font-medium text-cyan-accent">2025</span>
+                        <span class="text-gray-600">•</span>
+                        <span class="text-xs text-gray-400">Vue, GraphQL, Tailwind</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-display group-hover:text-cyan-accent transition-colors">Pulse
+                        CMS</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        A headless content system with a component-driven editor, built for...
+                    </p>
+                </div>
+            </a>
 
-                <!-- Project 4–6: tersembunyi, muncul setelah klik "View More" -->
-                <!-- Project 4 -->
-                <div class="project-card project-extra bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group hidden">
-                    <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
-                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/orbit.png" -->
-                        <img src="" alt="Orbit Chat preview" class="project-img w-full h-full object-cover">
-                        <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
-                            <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            <!-- Future Project 1-->
+            <a href="project.html"
+                class="project-card group block bg-dark-800 border border-white/10 rounded-2xl overflow-hidden project-extra hidden"
+                data-aos="fade-up" data-aos-delay="500">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <div class="project-img-wrap absolute inset-0">
+                        <img src="images/project-4.jpg" alt="Project 4"
+                            class="project-img w-full h-full object-cover transition-all duration-300 group-hover:blur-md group-hover:scale-105">
+                        <div class="project-img-placeholder absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-mono text-xs font-medium text-cyan-accent">Future Project</span>
-                            <span class="text-xs text-gray-500">...</span>
+                    <div
+                        class="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-center px-4">
+                            <span class="inline-flex items-center gap-2 text-cyan-accent font-semibold text-lg">
+                                View Detail Project
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">...</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            ...
-                        </p>
                     </div>
                 </div>
-
-                <!-- Project 5 -->
-                <div class="project-card project-extra bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group hidden">
-                    <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
-                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/orbit2.png" -->
-                        <img src="" alt="Orbit Chat preview" class="project-img w-full h-full object-cover">
-                        <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
-                            <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="font-mono text-xs font-medium text-cyan-accent">Future Project</span>
+                        <span class="text-gray-600">•</span>
+                        <span class="text-xs text-gray-400">...</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-display group-hover:text-cyan-accent transition-colors">...</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        ...
+                    </p>
+                </div>
+            </a>
+            
+            <!-- Future Project 2-->
+            <a href="project.html"
+                class="project-card group block bg-dark-800 border border-white/10 rounded-2xl overflow-hidden project-extra hidden"
+                data-aos="fade-up" data-aos-delay="600">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <div class="project-img-wrap absolute inset-0">
+                        <img src="images/project-5.jpg" alt="Project 5"
+                            class="project-img w-full h-full object-cover transition-all duration-300 group-hover:blur-md group-hover:scale-105">
+                        <div class="project-img-placeholder absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-mono text-xs font-medium text-cyan-accent">Future Project</span>
-                            <span class="text-xs text-gray-500">...</span>
+                    <div
+                        class="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-center px-4">
+                            <span class="inline-flex items-center gap-2 text-cyan-accent font-semibold text-lg">
+                                View Detail Project
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">...</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            ...
-                        </p>
                     </div>
                 </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="font-mono text-xs font-medium text-cyan-accent">Future Project</span>
+                        <span class="text-gray-600">•</span>
+                        <span class="text-xs text-gray-400">...</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-display group-hover:text-cyan-accent transition-colors">...</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        ...
+                    </p>
+                </div>
+            </a>
 
-                <!-- Project 6 -->
-                <div class="project-card project-extra bg-dark-800 border border-white/10 rounded-2xl overflow-hidden group hidden">
-                    <div class="project-img-wrap aspect-[4/3] relative overflow-hidden bg-dark-700">
-                        <!-- Ganti src="" dengan path gambar Anda, contoh: src="assets/images/vector.png" -->
-                        <img src="" alt="Vector Grid preview" class="project-img w-full h-full object-cover">
-                        <div class="project-img-placeholder absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none">
-                            <svg class="w-10 h-10 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            <!-- Future Project 3-->
+            <a href="project.html"
+                class="project-card group block bg-dark-800 border border-white/10 rounded-2xl overflow-hidden project-extra hidden"
+                data-aos="fade-up" data-aos-delay="700">
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <div class="project-img-wrap absolute inset-0">
+                        <img src="images/project-6.jpg" alt="Project 6"
+                            class="project-img w-full h-full object-cover transition-all duration-300 group-hover:blur-md group-hover:scale-105">
+                        <div class="project-img-placeholder absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="font-mono text-xs opacity-40 tracking-wider">project image</span>
                         </div>
                     </div>
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="font-mono text-xs font-medium text-cyan-accent">Future Project</span>
-                            <span class="text-xs text-gray-500">...</span>
+                    <div
+                        class="absolute inset-0 bg-dark-900/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div class="text-center px-4">
+                            <span class="inline-flex items-center gap-2 text-cyan-accent font-semibold text-lg">
+                                View Detail Project
+                                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">...</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed">
-                            ...
-                        </p>
                     </div>
                 </div>
-
-            </div>
-
-            <!-- View More / Show Less Button -->
-            <div class="flex justify-center mt-12">
-                <button id="viewMoreBtn" class="inline-flex items-center gap-2 px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-cyan-accent hover:text-cyan-accent transition-all">
-                    <span id="viewMoreLabel">View More Projects</span>
-                    <svg id="viewMoreIcon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </button>
-            </div>
-
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="font-mono text-xs font-medium text-cyan-accent">Future Project</span>
+                        <span class="text-gray-600">•</span>
+                        <span class="text-xs text-gray-400">...</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-display group-hover:text-cyan-accent transition-colors">...</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        ...
+                    </p>
+                </div>
+            </a>
         </div>
-    </section>
+
+        <!-- View More Button -->
+        <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="200">
+            <button id="viewMoreBtn"
+                class="inline-flex items-center gap-2 px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-cyan-accent hover:text-cyan-accent transition-all group">
+                <span id="viewMoreLabel">View More Projects</span>
+                <svg id="viewMoreIcon" class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
                 
 
     <!-- CTA Section -->
