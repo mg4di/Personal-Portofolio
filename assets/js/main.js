@@ -74,9 +74,8 @@ AOS.init({
     easing: 'ease-out-cubic',
     once: false,
     offset: 80,
+    disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
-
-// ─── Scroll Reveal (removed — using AOS) ─────────────────────
 
 // ─── Dark / Light Mode Toggle ────────────────────────────────
 const iconSun  = document.getElementById('iconSun');
