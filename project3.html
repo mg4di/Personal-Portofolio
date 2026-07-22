@@ -177,7 +177,8 @@
             display: block;
         }
 
-        .project-hero-img[src=""], .project-hero-img:not([src]) {
+        .project-hero-img[src=""],
+        .project-hero-img:not([src]) {
             opacity: 0;
         }
 
@@ -186,7 +187,7 @@
             color: var(--color-cyan-accent);
         }
 
-        .project-hero-img:not([src=""]) + .project-hero-img-placeholder {
+        .project-hero-img:not([src=""])+.project-hero-img-placeholder {
             opacity: 0;
             pointer-events: none;
         }
@@ -195,7 +196,8 @@
             display: block;
         }
 
-        .nav-project-img[src=""], .nav-project-img:not([src]) {
+        .nav-project-img[src=""],
+        .nav-project-img:not([src]) {
             opacity: 0;
         }
 
@@ -204,7 +206,7 @@
             color: var(--color-cyan-accent);
         }
 
-        .nav-project-img:not([src=""]) + .nav-project-img-placeholder {
+        .nav-project-img:not([src=""])+.nav-project-img-placeholder {
             opacity: 1;
         }
     </style>
@@ -256,7 +258,8 @@
             <div class="px-6 py-6 space-y-4">
                 <a href="index.html#home" class="block text-sm font-medium text-gray-400 hover:text-white">Home</a>
                 <a href="index.html#about" class="block text-sm font-medium text-gray-400 hover:text-white">About</a>
-                <a href="index.html#projects" class="block text-sm font-medium text-gray-400 hover:text-white">Projects</a>
+                <a href="index.html#projects"
+                    class="block text-sm font-medium text-gray-400 hover:text-white">Projects</a>
                 <a href="index.html#contact"
                     class="inline-flex items-center px-6 py-2.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full mt-2">Contact</a>
             </div>
@@ -278,18 +281,17 @@
     </div>
 
     <!-- Project Header -->
-    <section class="pb-16">
+    <section class="pb-16" data-aos="fade-up" data-aos-delay="100">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="max-w-4xl">
                 <div class="flex flex-wrap items-center gap-4 mb-6">
-                    <span class="font-mono text-sm font-medium text-cyan-accent">2026</span>
+                    <span class="font-mono text-sm font-medium text-cyan-accent">2025</span>
                     <span class="text-gray-600">•</span>
-                    <span class="text-sm text-gray-400">React, Node.js, WebSockets</span>
+                    <span class="text-sm text-gray-400">Vue, GraphQL, Tailwind</span>
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 font-display">Nimbus
-                    Analytics</h1>
-                <p class="text-xl text-gray-400 leading-relaxed max-w-3xl">Real-time analytics dashboard for SaaS teams,
-                    built with a focus on live data visualization and collaborative insights.</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 font-display">Pulse CMS</h1>
+                <p class="text-xl text-gray-400 leading-relaxed max-w-3xl">A headless content management system with a
+                    component-driven editor, built for modern development teams.</p>
             </div>
         </div>
     </section>
@@ -300,7 +302,7 @@
             <div class="project-image rounded-3xl overflow-hidden border border-white/10 bg-dark-800">
                 <div class="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-dark-700 to-dark-900">
                     <!-- project image -->
-                    <img id="projectHeroImage" src="assets/images/project1 img.webp" alt="Project screenshot"
+                    <img id="projectHeroImage" src="assets/images/project3 img.jpg" alt="Project screenshot"
                         class="project-hero-img w-full h-full object-cover">
                 </div>
             </div>
@@ -317,7 +319,7 @@
                         <dl class="space-y-3 text-sm">
                             <div class="flex justify-between py-2 border-b border-white/5">
                                 <dt class="text-gray-500">Year</dt>
-                                <dd class="text-white">2026</dd>
+                                <dd class="text-white">2025</dd>
                             </div>
                             <div class="flex justify-between py-2 border-b border-white/5">
                                 <dt class="text-gray-500">Role</dt>
@@ -325,11 +327,11 @@
                             </div>
                             <div class="flex justify-between py-2 border-b border-white/5">
                                 <dt class="text-gray-500">Client</dt>
-                                <dd class="text-white">SaaS Startup</dd>
+                                <dd class="text-white">Digital Agency</dd>
                             </div>
                             <div class="flex justify-between py-2 border-b border-white/5">
                                 <dt class="text-gray-500">Duration</dt>
-                                <dd class="text-white">4 months</dd>
+                                <dd class="text-white">5 months</dd>
                             </div>
                         </dl>
                     </div>
@@ -337,21 +339,19 @@
                         <h3 class="font-mono text-sm font-medium text-cyan-accent uppercase mb-4">Tech Stack</h3>
                         <div class="flex flex-wrap gap-2">
                             <span
-                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">React</span>
+                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">Vue.js</span>
+                            <span
+                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">GraphQL</span>
+                            <span
+                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">Tailwind</span>
                             <span
                                 class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">Node.js</span>
                             <span
-                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">WebSockets</span>
-                            <span
-                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">TypeScript</span>
-                            <span
                                 class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">PostgreSQL</span>
                             <span
-                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">Redis</span>
+                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">Apollo</span>
                             <span
-                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">D3.js</span>
-                            <span
-                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">Tailwind</span>
+                                class="px-3 py-1.5 bg-dark-800 border border-white/10 rounded-full text-xs font-medium text-white">Docker</span>
                         </div>
                     </div>
                     <div>
@@ -376,43 +376,43 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="lg:col-span-2 space-y-12">
                     <div>
                         <h2 class="text-2xl font-bold mb-6 font-display">Overview</h2>
                         <div class="space-y-4 text-gray-400 leading-relaxed">
-                            <p>Nimbus Analytics is a comprehensive real-time analytics platform designed for modern SaaS
-                                teams who need instant insights into their product performance, user behavior, and
-                                business metrics.</p>
-                            <p>The platform processes millions of events per day, providing sub-second latency updates
-                                to dashboards used by product managers, engineers, and executives. The challenge was to
-                                build a system that could handle massive data throughput while maintaining a smooth,
-                                responsive user experience.</p>
+                            <p>Pulse CMS is a modern headless content management system designed for development teams who
+                                need flexibility and performance. Unlike traditional CMS platforms, Pulse separates content
+                                management from presentation, allowing developers to build custom frontends while editors
+                                enjoy an intuitive content editing experience.</p>
+                            <p>The platform features a component-driven editor that lets content creators build pages using
+                                pre-defined blocks, ensuring design consistency while maintaining creative freedom. GraphQL
+                                API provides efficient data fetching for any frontend framework.</p>
                         </div>
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold mb-6 font-display">The Challenge</h2>
                         <div class="space-y-4 text-gray-400 leading-relaxed">
-                            <p>The client needed a solution that could:</p>
+                            <p>The agency needed a CMS that could:</p>
                             <ul class="list-disc list-inside space-y-2 ml-4">
-                                <li>Process and visualize real-time data streams from multiple sources</li>
-                                <li>Support collaborative features with multi-user editing and commenting</li>
-                                <li>Maintain performance with datasets exceeding 10 million records</li>
-                                <li>Provide customizable dashboards with drag-and-drop widgets</li>
-                                <li>Ensure data security with role-based access control</li>
+                                <li>Support multiple client projects with different content models</li>
+                                <li>Provide a visual editing experience without sacrificing developer control</li>
+                                <li>Deliver content via API to various frontends (web, mobile, IoT)</li>
+                                <li>Handle complex content relationships and nested structures</li>
+                                <li>Scale efficiently as the number of clients grew</li>
                             </ul>
                         </div>
                     </div>
                     <div>
                         <h2 class="text-2xl font-bold mb-6 font-display">The Solution</h2>
                         <div class="space-y-4 text-gray-400 leading-relaxed">
-                            <p>We architected a distributed system using WebSockets for real-time data push, combined
-                                with a Redis-backed pub/sub system for event broadcasting. The frontend leverages React
-                                with custom hooks for efficient state management and D3.js for complex data
-                                visualizations.</p>
-                            <p>Key technical decisions included implementing time-series database optimization,
-                                intelligent data sampling for large datasets, and a component-based architecture that
-                                allows teams to build and share custom visualization components.</p>
+                            <p>We built Pulse CMS using Vue.js for the admin interface and GraphQL for the API layer. The
+                                component-driven editor allows content creators to assemble pages from reusable blocks, each
+                                with its own schema and validation rules.</p>
+                            <p>The headless architecture means content can be consumed by any frontend — React, Vue,
+                                Next.js, or even mobile apps. Docker containerization makes deployment consistent across
+                                environments, and the multi-tenant architecture allows the agency to manage all client
+                                projects from a single instance.</p>
                         </div>
                     </div>
                 </div>
@@ -429,33 +429,34 @@
                     <div class="w-12 h-12 bg-cyan-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2 font-display">Component Editor</h3>
+                    <p class="text-sm text-gray-400">Visual drag-and-drop editor with reusable content blocks and live
+                        preview.</p>
+                </div>
+                <div class="p-6 bg-dark-800 border border-white/10 rounded-2xl">
+                    <div class="w-12 h-12 bg-cyan-accent/10 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2 font-display">Real-time Updates</h3>
-                    <p class="text-sm text-gray-400">Sub-second latency with WebSocket connections and optimized data
-                        streaming.</p>
+                    <h3 class="font-semibold mb-2 font-display">GraphQL API</h3>
+                    <p class="text-sm text-gray-400">Efficient, typed API with automatic schema generation from content
+                        models.</p>
                 </div>
                 <div class="p-6 bg-dark-800 border border-white/10 rounded-2xl">
                     <div class="w-12 h-12 bg-cyan-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2 font-display">Custom Dashboards</h3>
-                    <p class="text-sm text-gray-400">Drag-and-drop interface for building personalized analytics views.
-                    </p>
-                </div>
-                <div class="p-6 bg-dark-800 border border-white/10 rounded-2xl">
-                    <div class="w-12 h-12 bg-cyan-accent/10 rounded-xl flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-semibold mb-2 font-display">Team Collaboration</h3>
-                    <p class="text-sm text-gray-400">Multi-user editing, comments, and shared dashboard templates.</p>
+                    <h3 class="font-semibold mb-2 font-display">Multi-Tenant</h3>
+                    <p class="text-sm text-gray-400">Manage multiple client projects from a single CMS instance with
+                        isolated data.</p>
                 </div>
                 <div class="p-6 bg-dark-800 border border-white/10 rounded-2xl">
                     <div class="w-12 h-12 bg-cyan-accent/10 rounded-xl flex items-center justify-center mb-4">
@@ -464,31 +465,29 @@
                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2 font-display">Enterprise Security</h3>
-                    <p class="text-sm text-gray-400">Role-based access control, SSO integration, and audit logs.</p>
+                    <h3 class="font-semibold mb-2 font-display">Role-Based Access</h3>
+                    <p class="text-sm text-gray-400">Granular permissions for editors, authors, and administrators.</p>
                 </div>
                 <div class="p-6 bg-dark-800 border border-white/10 rounded-2xl">
                     <div class="w-12 h-12 bg-cyan-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2 font-display">Data Export</h3>
-                    <p class="text-sm text-gray-400">Export reports in CSV, PDF, or integrate with BI tools via API.</p>
+                    <h3 class="font-semibold mb-2 font-display">Version Control</h3>
+                    <p class="text-sm text-gray-400">Content versioning with rollback capabilities and change history.</p>
                 </div>
                 <div class="p-6 bg-dark-800 border border-white/10 rounded-2xl">
                     <div class="w-12 h-12 bg-cyan-accent/10 rounded-xl flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-cyan-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2 font-display">Smart Alerts</h3>
-                    <p class="text-sm text-gray-400">Configure automated alerts based on metric thresholds and
-                        anomalies.</p>
+                    <h3 class="font-semibold mb-2 font-display">Webhook Events</h3>
+                    <p class="text-sm text-gray-400">Trigger external workflows on content changes with configurable
+                        webhooks.</p>
                 </div>
             </div>
         </div>
@@ -498,12 +497,13 @@
     <section class="pb-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <a href="project3.html" class="group">
+                <a href="project2.html" class="group">
                     <div
                         class="bg-dark-800 border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-accent/30 transition-colors">
-                        <div class="aspect-[16/9] bg-gradient-to-br from-dark-700 to-dark-900 p-6 relative overflow-hidden">
-                            <!-- project image file -->
-                            <img src="assets/images/project3 img.jpg" alt="Ledger Flow preview"
+                        <div
+                            class="aspect-[16/9] bg-gradient-to-br from-dark-700 to-dark-900 p-6 relative overflow-hidden">
+                            <!--  project image file -->
+                            <img src="assets/images/project2 img.jpg" alt="Ledger Flow preview"
                                 class="nav-project-img w-full h-full object-cover rounded-lg">
                         </div>
                         <div class="p-6">
@@ -515,17 +515,18 @@
                                 </svg>
                                 <span class="text-xs text-gray-500">Previous Project</span>
                             </div>
-                            <h3 class="text-lg font-semibold font-display">Pulse CMS</h3>
-                            <p class="text-sm text-gray-400 mt-1">Headless content management system</p>
+                            <h3 class="text-lg font-semibold font-display">Ledger Flow</h3>
+                            <p class="text-sm text-gray-400 mt-1">Invoicing platform for freelancers</p>
                         </div>
                     </div>
                 </a>
-                <a href="project2.html" class="group">
+                <a href="project1.html" class="group">
                     <div
                         class="bg-dark-800 border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-accent/30 transition-colors">
-                        <div class="aspect-[16/9] bg-gradient-to-br from-dark-700 to-dark-900 p-6 relative overflow-hidden">
-                            <!-- project image file -->
-                            <img src="assets/images/project2 img.jpg" alt="Pulse CMS preview"
+                        <div
+                            class="aspect-[16/9] bg-gradient-to-br from-dark-700 to-dark-900 p-6 relative overflow-hidden">
+                            <!--  project image file -->
+                            <img src="assets/images/project1 img.webp" alt="Pulse CMS preview"
                                 class="nav-project-img w-full h-full object-cover rounded-lg">
                         </div>
                         <div class="p-6">
@@ -537,8 +538,8 @@
                                         d="M9 5l7 7-7 7" />
                                 </svg>
                             </div>
-                            <h3 class="text-lg font-semibold font-display">Ledger Flow</h3>
-                            <p class="text-sm text-gray-400 mt-1">Invoicing platform for freelancers</p>
+                            <h3 class="text-lg font-semibold font-display">Nimbus Analytics</h3>
+                            <p class="text-sm text-gray-400 mt-1">Real-time analytics dashboard for SaaS teams</p>
                         </div>
                     </div>
                 </a>
