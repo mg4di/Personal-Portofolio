@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Tailwind Config -->
@@ -264,7 +265,7 @@
     </nav>
 
     <!-- Back Navigation -->
-    <div class="pt-32 pb-12">
+    <div class="pt-32 pb-12" data-aos="fade-up" data-aos-duration="700">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <a href="index.html#projects"
                 class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-cyan-accent transition-colors group">
@@ -278,7 +279,7 @@
     </div>
 
     <!-- Project Header -->
-    <section class="pb-16">
+    <section class="pb-16" data-aos="fade-up" data-aos-delay="100">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="max-w-4xl">
                 <div class="flex flex-wrap items-center gap-4 mb-6">
@@ -295,7 +296,7 @@
     </section>
 
     <!-- Project Hero Image -->
-    <section class="pb-24">
+    <section class="pb-24" data-aos="fade-up" data-aos-delay="150">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="project-image rounded-3xl overflow-hidden border border-white/10 bg-dark-800">
                 <div class="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-dark-700 to-dark-900">
@@ -308,7 +309,7 @@
     </section>
 
     <!-- Project Details Grid -->
-    <section class="pb-24">
+    <section class="pb-24" data-aos="fade-up" data-aos-delay="100">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
                 <div class="lg:col-span-1 space-y-8">
@@ -421,7 +422,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="pb-24">
+    <section class="pb-24" data-aos="fade-up" data-aos-delay="100">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <h2 class="text-2xl font-bold mb-12 font-display">Key Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -495,7 +496,7 @@
     </section>
 
     <!-- Navigation to Other Projects -->
-    <section class="pb-24">
+    <section class="pb-24" data-aos="fade-up" data-aos-delay="100">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <a href="project3.html" class="group">
@@ -580,7 +581,16 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: false,
+            offset: 80,
+            disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
