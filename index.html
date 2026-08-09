@@ -157,31 +157,173 @@
         </div>
     </section>
 
-    <!-- Core Stack -->
-    <section id="stack" class="py-16 border-t border-b border-white/5 bg-dark-800/50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <p class="font-mono text-sm font-medium tracking-wider text-cyan-accent uppercase mb-8 text-center" data-aos="fade-up" data-aos-duration="800">
-                Core stack
-            </p>
-            <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
-                    TypeScript
-                </span>
-                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
-                    React
-                </span>
-                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
-                    Node.js
-                </span>
-                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
-                    PostgreSQL
-                </span>
-                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
-                    Next.js
-                </span>
-                <span class="px-5 py-2 border border-white/15 rounded-lg text-sm font-medium text-white hover:border-cyan-accent/50 hover:text-cyan-accent transition-colors cursor-default">
-                    Docker
-                </span>
+    <!-- Core Stack — horizontal ticker -->
+    <section data-aos="fade-up" data-aos-duration="800" id="stack" class="py-14 border-t border-b border-white/5 overflow-hidden" style="background:rgba(15,21,32,0.5);">
+
+        <!-- Ticker wrapper — clips overflow and holds edge fades -->
+        <div class="ticker-wrap relative">
+
+            <!-- Left fade edge -->
+            <div class="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-24 md:w-40"
+                 style="background:linear-gradient(to right,rgba(var(--fade-color),1) 0%,rgba(var(--fade-color),0) 100%);"></div>
+            <!-- Right fade edge -->
+            <div class="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-24 md:w-40"
+                 style="background:linear-gradient(to left,rgba(var(--fade-color),1) 0%,rgba(var(--fade-color),0) 100%);"></div>
+
+            <!-- Scrolling track — two identical lists for seamless loop -->
+            <div id="tickerTrack" class="ticker-track flex items-center gap-0">
+
+                <!-- List A -->
+                <ul class="ticker-list flex items-center shrink-0" aria-hidden="false">
+                    <!-- TypeScript -->
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <rect width="24" height="24" rx="3" fill="#3178C6"/>
+                            <path d="M13.5 11.5H11v1.25c0 .69.56 1.25 1.25 1.25s1.25-.56 1.25-1.25V11.5zM9 11.5H7v5h1.5v-1.75H9a1.75 1.75 0 000-3.5z" fill="#fff"/>
+                            <path d="M9 13h-.5v-.5H9a.5.5 0 010 1z" fill="#3178C6"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">TypeScript</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+
+                    <!-- React -->
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="2.2" fill="#61DAFB"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(60 12 12)"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(120 12 12)"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">React</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+
+                    <!-- Node.js -->
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="#339933"/>
+                            <path d="M12 2v20M3 7l9 5 9-5" stroke="#fff" stroke-width="0.6" stroke-opacity="0.3" fill="none"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Node.js</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+
+                    <!-- PostgreSQL -->
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <ellipse cx="12" cy="6" rx="8" ry="3" fill="#336791"/>
+                            <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" fill="#336791"/>
+                            <path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" fill="#2d6089"/>
+                            <ellipse cx="12" cy="6" rx="8" ry="3" stroke="#fff" stroke-width="0.5" stroke-opacity="0.2" fill="none"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">PostgreSQL</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+
+                    <!-- Next.js -->
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="#000"/>
+                            <path d="M8 8l8 8M8 8v8" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 8v5.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Next.js</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+
+                    <!-- Docker -->
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="12" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="7" y="12" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="12" y="12" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="7" y="8.5" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="12" y="8.5" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <path d="M20.5 13.5c.3-1.5-.8-2.5-2.2-2.5-.2-1-1.1-1.5-2-1.5-.2-1-1-1.5-2-1.5" stroke="#2496ED" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+                            <path d="M2 15.5h16.5a2 2 0 002-2" stroke="#2496ED" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Docker</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+
+                    <!-- Tailwind -->
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 6c-2 0-3.5 1-4 3 .5-1 1.5-1.5 2.5-1.5 1.1 0 1.8.7 2.7 1.5C14.3 10.1 15.3 11 17 11c2 0 3.5-1 4-3-.5 1-1.5 1.5-2.5 1.5-1.1 0-1.8-.7-2.7-1.5C14.7 6.9 13.7 6 12 6zM8 13c-2 0-3.5 1-4 3 .5-1 1.5-1.5 2.5-1.5 1.1 0 1.8.7 2.7 1.5C10.3 17.1 11.3 18 13 18c2 0 3.5-1 4-3-.5 1-1.5 1.5-2.5 1.5-1.1 0-1.8-.7-2.7-1.5C10.7 13.9 9.7 13 8 13z" fill="#38BDF8"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Tailwind CSS</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+                </ul>
+
+                <!-- List B — identical clone for seamless loop -->
+                <ul class="ticker-list flex items-center shrink-0" aria-hidden="true">
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <rect width="24" height="24" rx="3" fill="#3178C6"/>
+                            <path d="M13.5 11.5H11v1.25c0 .69.56 1.25 1.25 1.25s1.25-.56 1.25-1.25V11.5zM9 11.5H7v5h1.5v-1.75H9a1.75 1.75 0 000-3.5z" fill="#fff"/>
+                            <path d="M9 13h-.5v-.5H9a.5.5 0 010 1z" fill="#3178C6"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">TypeScript</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="2.2" fill="#61DAFB"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(60 12 12)"/>
+                            <ellipse cx="12" cy="12" rx="10" ry="4" stroke="#61DAFB" stroke-width="1.2" fill="none" transform="rotate(120 12 12)"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">React</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="#339933"/>
+                            <path d="M12 2v20M3 7l9 5 9-5" stroke="#fff" stroke-width="0.6" stroke-opacity="0.3" fill="none"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Node.js</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <ellipse cx="12" cy="6" rx="8" ry="3" fill="#336791"/>
+                            <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" fill="#336791"/>
+                            <path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" fill="#2d6089"/>
+                            <ellipse cx="12" cy="6" rx="8" ry="3" stroke="#fff" stroke-width="0.5" stroke-opacity="0.2" fill="none"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">PostgreSQL</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" fill="#000"/>
+                            <path d="M8 8l8 8M8 8v8" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 8v5.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Next.js</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="12" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="7" y="12" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="12" y="12" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="7" y="8.5" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <rect x="12" y="8.5" width="4" height="3" rx="0.5" fill="#2496ED"/>
+                            <path d="M20.5 13.5c.3-1.5-.8-2.5-2.2-2.5-.2-1-1.1-1.5-2-1.5-.2-1-1-1.5-2-1.5" stroke="#2496ED" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+                            <path d="M2 15.5h16.5a2 2 0 002-2" stroke="#2496ED" stroke-width="0.8" stroke-linecap="round" fill="none"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Docker</span>
+                    </li>
+                    <li class="ticker-sep w-px h-4 bg-white/10 shrink-0"></li>
+                    <li class="ticker-item flex items-center gap-3 px-8 py-1 shrink-0">
+                        <svg class="w-6 h-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 6c-2 0-3.5 1-4 3 .5-1 1.5-1.5 2.5-1.5 1.1 0 1.8.7 2.7 1.5C14.3 10.1 15.3 11 17 11c2 0 3.5-1 4-3-.5 1-1.5 1.5-2.5 1.5-1.1 0-1.8-.7-2.7-1.5C14.7 6.9 13.7 6 12 6zM8 13c-2 0-3.5 1-4 3 .5-1 1.5-1.5 2.5-1.5 1.1 0 1.8.7 2.7 1.5C10.3 17.1 11.3 18 13 18c2 0 3.5-1 4-3-.5 1-1.5 1.5-2.5 1.5-1.1 0-1.8-.7-2.7-1.5C10.7 13.9 9.7 13 8 13z" fill="#38BDF8"/>
+                        </svg>
+                        <span class="text-sm font-medium text-white whitespace-nowrap">Tailwind CSS</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>

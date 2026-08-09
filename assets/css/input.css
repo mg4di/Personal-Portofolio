@@ -353,3 +353,47 @@ body::after {
 .light .bg-dark-700 {
   background-color: #e5e7eb;
 }
+
+/* ─── Ticker / Marquee ───────────────────────────────────────── */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-wrap {
+  --fade-color: 15, 21, 32; /* dark mode default */
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover */
+.ticker-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* ─── Light mode — ticker section ───────────────────────────── */
+.light #stack {
+  background: #f3f4f6 !important;
+  border-color: #e5e7eb !important;
+}
+.light .ticker-wrap {
+  --fade-color: 243, 244, 246;
+}
+.light .ticker-item span {
+  color: #111111 !important;
+}
+.light .ticker-sep {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
