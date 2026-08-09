@@ -35,6 +35,86 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// ─── 3D Tilt Card ────────────────────────────────────────────
+(function () {
+    const card   = document.getElementById('tiltCard');
+    const glare  = document.getElementById('tiltGlare');
+    const float  = document.getElementById('tiltFloat');
+    if (!card) return;
+
+    // Skip on touch / reduced-motion
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    const MAX_TILT   = 14;    // degrees
+    const GLARE_MAX  = 0.28;  // max glare opacity
+
+    let raf = null;
+    let targetRX = 0, targetRY = 0;
+    let currentRX = 0, currentRY = 0;
+    let isHovered = false;
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function animate() {
+        currentRX = lerp(currentRX, targetRX, 0.12);
+        currentRY = lerp(currentRY, targetRY, 0.12);
+
+        card.style.transform =
+            `rotateX(${currentRX}deg) rotateY(${currentRY}deg)`;
+
+        // Floating border parallax — opposite direction, shallower
+        if (float) {
+            float.style.transform =
+                `translateZ(-20px) rotateX(${-currentRX * 0.4}deg) rotateY(${-currentRY * 0.4}deg)`;
+        }
+
+        // Glare position based on tilt
+        if (glare) {
+            const gx = 50 + currentRY * 2;
+            const gy = 50 - currentRX * 2;
+            const gOpacity = (Math.abs(currentRX) + Math.abs(currentRY)) / (MAX_TILT * 2) * GLARE_MAX;
+            glare.style.background =
+                `radial-gradient(circle at ${gx}% ${gy}%, rgba(255,255,255,${gOpacity * 1.6}) 0%, transparent 65%)`;
+            glare.style.opacity = gOpacity > 0.01 ? '1' : '0';
+        }
+
+        if (isHovered ||
+            Math.abs(currentRX) > 0.05 ||
+            Math.abs(currentRY) > 0.05) {
+            raf = requestAnimationFrame(animate);
+        } else {
+            raf = null;
+        }
+    }
+
+    function startRaf() {
+        if (!raf) raf = requestAnimationFrame(animate);
+    }
+
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;   // 0–1
+        const y = (e.clientY - rect.top)  / rect.height;  // 0–1
+        targetRY =  (x - 0.5) * MAX_TILT * 2;
+        targetRX = -(y - 0.5) * MAX_TILT * 2;
+        startRaf();
+    });
+
+    card.addEventListener('mouseenter', () => {
+        isHovered = true;
+        card.style.transition = 'none';
+        startRaf();
+    });
+
+    card.addEventListener('mouseleave', () => {
+        isHovered = false;
+        targetRX = 0;
+        targetRY = 0;
+        startRaf();
+    });
+})();
+
 // ─── AOS Init ────────────────────────────────────────────────
 AOS.init({
     duration: 800,

@@ -98,25 +98,40 @@
                     </div>
                 </div>
 
-                <!-- Right: Photo -->
-                <div class="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
-                    <img
-                        id="heroPhoto"
-                        src="assets/images/IMG_20230406_184900.jpg"
-                        alt="Mang Adi, software and web developer based in Indonesia"
-                        class="hero-photo w-full h-full object-cover rounded-2xl"
-                    >
-                    <!-- Placeholder tampil saat src kosong -->
-                    <div class="hero-photo-placeholder absolute inset-0 rounded-2xl border-2 border-dashed border-white/20 flex flex-col items-center justify-center gap-3">
-                        <svg class="w-12 h-12 text-cyan-accent opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                        </svg>
-                        <span class="font-mono text-xs text-white/30 tracking-wider">your photo here</span>
+                <!-- Right: Photo — 3D tilt card -->
+                <div class="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150"
+                     style="perspective: 800px;">
+                    <div id="tiltCard" class="tilt-card relative w-full h-full"
+                         style="transform-style: preserve-3d; transition: transform 0.1s ease; will-change: transform;">
+
+                        <!-- Card face -->
+                        <div class="tilt-card-inner w-full h-full rounded-2xl overflow-hidden"
+                             style="transform: translateZ(0); box-shadow: 0 25px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);">
+                            <img
+                                id="heroPhoto"
+                                src="assets/images/IMG_20230406_184900.jpg"
+                                alt="Mang Adi, software and web developer based in Indonesia"
+                                class="hero-photo w-full h-full object-cover"
+                                style="display:block;"
+                            >
+                            <div class="hero-photo-placeholder absolute inset-0 rounded-2xl border-2 border-dashed border-white/20 flex flex-col items-center justify-center gap-3">
+                                <svg class="w-12 h-12 text-cyan-accent opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                </svg>
+                                <span class="font-mono text-xs text-white/30 tracking-wider">your photo here</span>
+                            </div>
+
+                            <!-- Glare layer -->
+                            <div id="tiltGlare" class="tilt-glare pointer-events-none absolute inset-0 rounded-2xl"
+                                 style="opacity:0; transition: opacity 0.3s ease;"></div>
+                        </div>
+
+                        <!-- Floating depth layer — shifts on tilt for parallax -->
+                        <div id="tiltFloat" class="pointer-events-none absolute -inset-3 rounded-2xl border border-cyan-accent/15"
+                             style="transform: translateZ(-20px); transition: transform 0.1s ease;"></div>
+
                     </div>
-                    <!-- Accent ring decoration -->
-                    <div class="absolute -inset-3 rounded-2xl border border-cyan-accent/10 pointer-events-none"></div>
-                    <div class="absolute -inset-6 rounded-2xl border border-cyan-accent/5 pointer-events-none"></div>
                 </div>
 
             </div>
