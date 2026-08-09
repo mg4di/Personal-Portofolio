@@ -338,3 +338,19 @@ body::after {
   border-color: #0369a1;
   color: #0369a1;
 }
+
+/* ─── Nav project image (prev/next) light mode ───────────────── */
+/* Browser default outline on <img> inside <a> causes black ring */
+.nav-project-img {
+  display: block;
+  outline: none;
+  border: none;
+}
+.light .aspect-\[16\/9\].bg-gradient-to-br {
+  background: #e5e7eb;
+  background-image: none;
+}
+
+.light .bg-dark-700 {
+  background-color: #e5e7eb;
+}
