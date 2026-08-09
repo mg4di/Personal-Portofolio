@@ -146,6 +146,56 @@ body::after {
   .theme-toggle:active {
     transform: scale(0.95);
   }
+
+  /* ─── Mobile menu animation ────────────────────────────────── */
+  .mobile-menu {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transform: translateY(-8px);
+    transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+  .mobile-menu.open {
+    max-height: 28rem;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .mobile-menu-btn {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+  }
+  .mobile-menu-btn .hamburger-line {
+    position: absolute;
+    left: 50%;
+    width: 1.5rem;
+    height: 0.125rem;
+    border-radius: 9999px;
+    background: currentColor;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+    transform: translateX(-50%);
+  }
+  .mobile-menu-btn .hamburger-line:nth-child(1) {
+    top: 0.45rem;
+  }
+  .mobile-menu-btn .hamburger-line:nth-child(2) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mobile-menu-btn .hamburger-line:nth-child(3) {
+    bottom: 0.45rem;
+  }
+  .mobile-menu-btn.open .hamburger-line:nth-child(1) {
+    transform: translate(-50%, 0.45rem) rotate(45deg);
+  }
+  .mobile-menu-btn.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-menu-btn.open .hamburger-line:nth-child(3) {
+    transform: translate(-50%, -0.45rem) rotate(-45deg);
+  }
 }
 
 @layer base {
@@ -218,8 +268,24 @@ body::after {
 .light #mobileMenu a {
   color: #374151;
 }
-.light #mobileMenu a:hover {
+.light #mobileMenu a.inline-flex {
   color: #0a0e17;
+}
+.light #mobileMenu a:not(.inline-flex):hover {
+  color: #0a0e17;
+}
+.light #mobileMenu a.inline-flex:hover {
+  color: #0a0e17 !important;
+  background-color: var(--color-cyan-accent) !important;
+}
+
+/* Button hover resets in light mode */
+.light a.bg-cyan-accent {
+  color: #0a0e17;
+}
+.light a.bg-cyan-accent:hover {
+  color: #0a0e17 !important;
+  background-color: var(--color-cyan-accent) !important;
 }
 
 /* Hero */

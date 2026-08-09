@@ -47,22 +47,22 @@
                     </button>
 
                     <!-- Contact Button -->
-                    <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full hover:bg-cyan-300 transition-colors">
+                    <a href="#contact" class="hidden md:inline-flex items-center px-6 py-2.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full transition-colors">
                         Contact
                     </a>
 
                     <!-- Mobile Menu Button -->
-                    <button id="mobileMenuBtn" class="md:hidden text-white p-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
+                    <button id="mobileMenuBtn" class="mobile-menu-btn md:hidden text-white p-2" aria-label="Toggle menu" aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-dark-900/95 backdrop-blur-md border-b border-white/5">
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-dark-900/95 backdrop-blur-md border-b border-white/5">
             <div class="px-6 py-6 space-y-4">
                 <a href="#home" class="block text-sm font-medium text-gray-400">Home</a>
                 <a href="#about" class="block text-sm font-medium text-gray-400 hover:text-white">About</a>
@@ -89,10 +89,10 @@
                         I design and build clean, performant products end-to-end — from data models to pixel-level detail. Currently open to new collaborations.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="inline-flex items-center px-8 py-3.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full hover:bg-cyan-300 active:scale-95 transition-all">
+                        <a href="#projects" class="inline-flex items-center px-8 py-3.5 bg-cyan-accent text-dark-900 text-sm font-semibold rounded-full active:scale-95 transition-all">
                             View projects
                         </a>
-                        <a href="#about" class="inline-flex items-center px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-white/40 hover:bg-white/5 active:scale-95 transition-all">
+                        <a href="#about" class="inline-flex items-center px-8 py-3.5 border border-white/20 text-white text-sm font-semibold rounded-full hover:border-white/40 active:scale-95 transition-all">
                             About me
                         </a>
                     </div>
@@ -501,7 +501,7 @@
                 Have a project in mind?
             </h2>
             <p class="text-gray-400 mb-10" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Let's talk about it.</p>
-            <a href="mailto:hello@mangadi.dev" class="inline-flex items-center px-10 py-4 bg-cyan-accent text-dark-900 text-base font-semibold rounded-full hover:bg-cyan-300 active:scale-95 transition-all" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <a href="mailto:hello@mangadi.dev" class="inline-flex items-center px-10 py-4 bg-cyan-accent text-dark-900 text-base font-semibold rounded-full active:scale-95 transition-all" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 Get in touch
             </a>
         </div>
