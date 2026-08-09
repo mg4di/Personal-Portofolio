@@ -44,30 +44,77 @@ AOS.init({
     disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
 
-// ─── Dark / Light Mode Toggle ────────────────────────────────
+// ─── Dark / Light Mode Toggle + Water Drop Transition ────────
+const themeToggle = document.getElementById('themeToggle');
 const iconSun  = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
 const htmlEl   = document.documentElement;
 
 // Load saved preference (default: dark)
 const savedTheme = localStorage.getItem('theme') || 'dark';
-applyTheme(savedTheme);
+applyTheme(savedTheme, false);
 
 themeToggle.addEventListener('click', () => {
     const isCurrentlyDark = !htmlEl.classList.contains('light');
-    applyTheme(isCurrentlyDark ? 'light' : 'dark');
+    const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+    rippleTransition(nextTheme);
 });
 
-function applyTheme(theme) {
+function rippleTransition(theme) {
+    const btn = themeToggle;
+    const rect = btn.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    const maxRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+    );
+
+    // Overlay color = destination theme background
+    const overlayColor = theme === 'light' ? '#f5f7fa' : '#0a0e17';
+
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: ${overlayColor};
+        clip-path: circle(0px at ${x}px ${y}px);
+        pointer-events: none;
+        will-change: clip-path;
+    `;
+    document.body.appendChild(overlay);
+
+    // Phase 1: expand ripple to cover full page (0 → maxRadius)
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            overlay.style.transition = 'clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            overlay.style.clipPath = `circle(${maxRadius}px at ${x}px ${y}px)`;
+        });
+    });
+
+    overlay.addEventListener('transitionend', () => {
+        // Full page now covered — safe to switch theme, eye sees nothing
+        applyTheme(theme, true);
+
+        // Phase 2: shrink ripple from same origin to reveal new theme content
+        overlay.style.transition = 'clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        overlay.style.clipPath = `circle(0px at ${x}px ${y}px)`;
+
+        overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+    }, { once: true });
+}
+
+function applyTheme(theme, saveToStorage = true) {
     if (theme === 'light') {
         htmlEl.classList.add('light');
         iconSun.classList.add('hidden');
         iconMoon.classList.remove('hidden');
-        localStorage.setItem('theme', 'light');
     } else {
         htmlEl.classList.remove('light');
         iconSun.classList.remove('hidden');
         iconMoon.classList.add('hidden');
-        localStorage.setItem('theme', 'dark');
     }
+    if (saveToStorage) localStorage.setItem('theme', theme);
 }
