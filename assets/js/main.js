@@ -33,28 +33,26 @@ window.addEventListener('scroll', () => {
     });
 
     navLinks.forEach(link => {
-        link.classList.remove('active', 'text-white');
-        link.classList.add('text-gray-400');
+        link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active', 'text-white');
-            link.classList.remove('text-gray-400');
+            link.classList.add('active');
         }
     });
 });
 
 // ─── 3D Tilt Card ────────────────────────────────────────────
 (function () {
-    const card   = document.getElementById('tiltCard');
-    const glare  = document.getElementById('tiltGlare');
-    const float  = document.getElementById('tiltFloat');
+    const card = document.getElementById('tiltCard');
+    const glare = document.getElementById('tiltGlare');
+    const float = document.getElementById('tiltFloat');
     if (!card) return;
 
     // Skip on touch / reduced-motion
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) return;
 
-    const MAX_TILT   = 14;    // degrees
-    const GLARE_MAX  = 0.28;  // max glare opacity
+    const MAX_TILT = 14;    // degrees
+    const GLARE_MAX = 0.28;  // max glare opacity
 
     let raf = null;
     let targetRX = 0, targetRY = 0;
@@ -102,8 +100,8 @@ window.addEventListener('scroll', () => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width;   // 0–1
-        const y = (e.clientY - rect.top)  / rect.height;  // 0–1
-        targetRY =  (x - 0.5) * MAX_TILT * 2;
+        const y = (e.clientY - rect.top) / rect.height;  // 0–1
+        targetRY = (x - 0.5) * MAX_TILT * 2;
         targetRX = -(y - 0.5) * MAX_TILT * 2;
         startRaf();
     });
@@ -133,75 +131,35 @@ AOS.init({
 
 // ─── Dark / Light Mode Toggle + Water Drop Transition ────────
 const themeToggle = document.getElementById('themeToggle');
-const iconSun  = document.getElementById('iconSun');
+const iconSun = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
-const htmlEl   = document.documentElement;
+const htmlEl = document.documentElement;
 
-// Load saved preference (default: light)
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme, false);
+if (themeToggle) {
+    // Load saved preference (default: dark)
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme, false);
 
-themeToggle.addEventListener('click', () => {
-    const isCurrentlyDark = !htmlEl.classList.contains('light');
-    const nextTheme = isCurrentlyDark ? 'light' : 'dark';
-    rippleTransition(nextTheme);
-});
-
-function rippleTransition(theme) {
-    const btn = themeToggle;
-    const rect = btn.getBoundingClientRect();
-    const x = rect.left + rect.width / 2;
-    const y = rect.top + rect.height / 2;
-
-    const maxRadius = Math.hypot(
-        Math.max(x, window.innerWidth - x),
-        Math.max(y, window.innerHeight - y)
-    );
-
-    // Overlay color = destination theme background
-    const overlayColor = theme === 'light' ? '#f5f7fa' : '#0a0e17';
-
-    const overlay = document.createElement('div');
-    overlay.style.cssText = `
-        position: fixed;
-        inset: 0;
-        z-index: 99999;
-        background: ${overlayColor};
-        clip-path: circle(0px at ${x}px ${y}px);
-        pointer-events: none;
-        will-change: clip-path;
-    `;
-    document.body.appendChild(overlay);
-
-    // Phase 1: expand ripple to cover full page (0 → maxRadius)
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            overlay.style.transition = 'clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-            overlay.style.clipPath = `circle(${maxRadius}px at ${x}px ${y}px)`;
-        });
+    themeToggle.addEventListener('click', () => {
+        const isCurrentlyDark = htmlEl.getAttribute('data-theme') !== 'light';
+        const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+        applyTheme(nextTheme, true);
     });
-
-    overlay.addEventListener('transitionend', () => {
-        // Full page now covered — safe to switch theme, eye sees nothing
-        applyTheme(theme, true);
-
-        // Phase 2: shrink ripple from same origin to reveal new theme content
-        overlay.style.transition = 'clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        overlay.style.clipPath = `circle(0px at ${x}px ${y}px)`;
-
-        overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
-    }, { once: true });
 }
 
 function applyTheme(theme, saveToStorage = true) {
-    if (theme === 'light') {
-        htmlEl.classList.add('light');
-        iconSun.classList.add('hidden');
-        iconMoon.classList.remove('hidden');
-    } else {
-        htmlEl.classList.remove('light');
-        iconSun.classList.remove('hidden');
-        iconMoon.classList.add('hidden');
+    const isLight = theme === 'light';
+    htmlEl.setAttribute('data-theme', isLight ? 'light' : 'dark');
+
+    if (iconSun && iconMoon) {
+        if (isLight) {
+            iconSun.classList.add('hidden');
+            iconMoon.classList.remove('hidden');
+        } else {
+            iconSun.classList.remove('hidden');
+            iconMoon.classList.add('hidden');
+        }
     }
+
     if (saveToStorage) localStorage.setItem('theme', theme);
 }

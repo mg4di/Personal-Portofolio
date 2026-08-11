@@ -1,7 +1,7 @@
-(function(){
-    function finishLoad(){
-        requestAnimationFrame(function(){
-            requestAnimationFrame(function(){
+(function () {
+    function finishLoad() {
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
                 document.body.classList.remove('is-loading');
                 document.body.classList.add('is-loaded');
             });
