@@ -137,8 +137,8 @@ const iconSun  = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
 const htmlEl   = document.documentElement;
 
-// Load saved preference (default: dark)
-const savedTheme = localStorage.getItem('theme') || 'dark';
+// Load saved preference (default: light)
+const savedTheme = localStorage.getItem('theme') || 'light';
 applyTheme(savedTheme, false);
 
 themeToggle.addEventListener('click', () => {
