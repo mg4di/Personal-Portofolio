@@ -377,6 +377,9 @@ body::after {
 .light footer .text-gray-500 {
   color: #9ca3af;
 }
+.light footer a:hover {
+  color: #0369a1 !important;
+}
 
 /* Theme toggle in light mode */
 .light .theme-toggle {
