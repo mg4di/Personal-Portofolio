@@ -1,0 +1,22 @@
+/* Page entrance: gentle blur + fade-in */
+body.is-loading {
+    filter: blur(22px);
+    opacity: 0;
+    transition: filter 2400ms cubic-bezier(.22,.9,.22,1), opacity 1800ms ease-in-out;
+    will-change: filter, opacity;
+}
+
+body.is-loaded {
+    filter: blur(0);
+    opacity: 1;
+    transition: filter 2400ms cubic-bezier(.22,.9,.22,1), opacity 1800ms ease-in-out;
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    body.is-loading, body.is-loaded {
+        filter: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}
