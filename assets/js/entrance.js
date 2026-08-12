@@ -1,6 +1,28 @@
 (function () {
     'use strict';
 
+    const navEntries = performance.getEntriesByType('navigation');
+    const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
+
+    // Check if the current page is NOT index.html
+    const isIndexPage =
+        window.location.pathname.endsWith('index.html') ||
+        window.location.pathname === '/' ||
+        window.location.pathname === '';
+
+    // If reloading on a project detail page, set a redirect flag and navigate to index.html hero section
+    if (isReload && !isIndexPage) {
+        sessionStorage.setItem('playEntrance', 'true');
+        window.location.href = 'index.html#home';
+        return;
+    }
+
+    // Check if redirected from a detail page refresh
+    const forceEntrance = sessionStorage.getItem('playEntrance') === 'true';
+    if (forceEntrance) {
+        sessionStorage.removeItem('playEntrance');
+    }
+
     // Force browser to scroll to the top (Hero Section) on reload
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
@@ -11,14 +33,13 @@
         window.scrollTo(0, 0);
     });
 
-    // Check if the page was refreshed or came from an internal page
-    const navEntries = performance.getEntriesByType('navigation');
-    const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
-
+    // Determine internal navigation status
+    // Override skip behavior if forceEntrance is true
     const isInternalNavigation =
         document.referrer &&
         document.referrer.startsWith(window.location.origin) &&
-        !isReload;
+        !isReload &&
+        !forceEntrance;
 
     // Helper function to instantly hide preloader on internal page clicks
     function skipEntrance() {
@@ -32,7 +53,7 @@
         }
     }
 
-    // If coming from another page on the same site (and NOT refreshing), skip animation
+    // If coming from another page on the same site (and NOT refreshing/forced), skip animation
     if (isInternalNavigation) {
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', skipEntrance);
@@ -49,9 +70,8 @@
         return;
     }
 
-    // Play full animation (First time landing on site OR Page Refresh)
+    // Play full animation (First time landing on site, index page refresh, OR detail page refresh redirect)
     function initEntrance() {
-        // Ensure top position again when entrance starts
         window.scrollTo(0, 0);
 
         const loader = document.getElementById('namma-loader');
@@ -68,7 +88,7 @@
         });
 
         const counterInterval = setInterval(function () {
-            progress += Math.floor(Math.random() * 3) + 1;
+            progress += Math.floor(Math.random() * 2) + 1;
 
             if (progress >= 100) {
                 progress = 100;

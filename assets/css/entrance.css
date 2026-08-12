@@ -29,14 +29,19 @@
   margin-top: auto;
   margin-bottom: auto;
   overflow: hidden;
+  text-align: center;
+  /* Keep typing element horizontally centered */
 }
 
 .loader-text-wrapper {
   overflow: hidden;
+  text-align: center;
+  /* Keep typing element horizontally centered */
 }
 
 .loader-text {
-  display: block;
+  display: inline-block;
+  /* Inline-block allows centered symmetric expansion */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: clamp(2.5rem, 8vw, 5.0rem);
   font-weight: 700;
@@ -44,8 +49,37 @@
   line-height: 1.05;
   text-align: center;
   text-transform: uppercase;
-  transform: translateY(110%);
-  transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Typewriter Setup */
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid currentColor;
+  /* Blinking cursor */
+  margin: 0 auto;
+}
+
+/* Keyframe Animations (9 characters for "HELLOO :D") */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 9ch;
+  }
+}
+
+@keyframes blink {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: currentColor;
+  }
 }
 
 /* Preloader Footer & Monospace Counter */
@@ -73,7 +107,9 @@
 
 /* Animation Trigger State Classes */
 body.is-loading .loader-text {
-  transform: translateY(0%);
+  animation:
+    typing 1.4s steps(9, end) forwards,
+    blink 0.75s step-end infinite;
 }
 
 body.is-finished .namma-loader {

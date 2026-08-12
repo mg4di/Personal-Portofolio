@@ -129,7 +129,7 @@ AOS.init({
     disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
 
-// ─── Dark / Light Mode Toggle + Water Drop Transition ────────
+// ─── Dark / Light Mode Toggle
 const themeToggle = document.getElementById('themeToggle');
 const iconSun = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
