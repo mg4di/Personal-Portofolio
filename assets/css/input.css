@@ -552,26 +552,24 @@ html[data-theme="light"] .ticker-sep {
       rgba(var(--fade-color), 0) 100%);
 }
 
-/* ─── View Transitions API ─────────────────────────────── */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none !important;
-  mix-blend-mode: normal !important;
-  display: block;
-}
-
-/* Force outgoing screenshot under, incoming screenshot over */
+/* ─── View Transitions API (Center Circle Wipe) ─── */
 ::view-transition-old(root) {
+  animation: none !important;
   z-index: 1 !important;
+  mix-blend-mode: normal !important;
 }
 
 ::view-transition-new(root) {
+  animation: theme-reveal 2s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
   z-index: 9999 !important;
+  mix-blend-mode: normal !important;
 }
 
-/* Prevent individual element CSS transitions from firing simultaneously during view transition */
-.theme-transitioning *,
-.theme-transitioning *::before,
-.theme-transitioning *::after {
-  transition: none !important;
+@keyframes theme-reveal {
+  0% {
+    clip-path: circle(0px at 50% 50%);
+  }
+  100% {
+    clip-path: circle(150% at 50% 50%);
+  }
 }

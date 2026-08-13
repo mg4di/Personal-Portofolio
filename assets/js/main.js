@@ -130,17 +130,21 @@ AOS.init({
     disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
 
-// ─── Dark / Light Mode Toggle (With Symmetric Circular View Transition) ───
+// ─── Dark / Light Mode Toggle ───
 const themeToggle = document.getElementById('themeToggle');
 const iconSun = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
 const htmlEl = document.documentElement;
 
+let isTransitioning = false;
+
 if (themeToggle) {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme, false);
 
-    themeToggle.addEventListener('click', (event) => {
+    themeToggle.addEventListener('click', () => {
+        if (isTransitioning) return;
+
         const isCurrentlyDark = htmlEl.getAttribute('data-theme') !== 'light';
         const nextTheme = isCurrentlyDark ? 'light' : 'dark';
 
@@ -152,40 +156,16 @@ if (themeToggle) {
             return;
         }
 
-        // Get the exact center of the page
-        const x = window.innerWidth / 2;
-        const y = window.innerHeight / 2;
-
-        // Calculate maximum radius required to cover the screen
-        const endRadius = Math.hypot(
-            Math.max(x, window.innerWidth - x),
-            Math.max(y, window.innerHeight - y)
-        );
-
-        document.body.classList.add('theme-transitioning');
+        isTransitioning = true;
 
         const transition = document.startViewTransition(() => {
             applyTheme(nextTheme, true);
         });
 
-        transition.ready.then(() => {
-            // Animate clip-path on the new layer expanding outwards from the center of the page
-            const animation = document.documentElement.animate(
-                {
-                    clipPath: [
-                        `circle(0px at ${x}px ${y}px)`,
-                        `circle(${endRadius}px at ${x}px ${y}px)`
-                    ]
-                },
-                {
-                    duration: 400,
-                    pseudoElement: '::view-transition-new(root)'
-                }
-            );
-
-            animation.onfinish = () => {
-                document.body.classList.remove('theme-transitioning');
-            };
+        transition.finished.then(() => {
+            isTransitioning = false;
+        }).catch(() => {
+            isTransitioning = false;
         });
     });
 }
