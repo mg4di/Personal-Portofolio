@@ -88,7 +88,7 @@
         });
 
         const counterInterval = setInterval(function () {
-            progress += Math.floor(Math.random() * 2) + 1;
+            progress += Math.floor(Math.random() * 3) + 1;
 
             if (progress >= 100) {
                 progress = 100;
@@ -108,7 +108,7 @@
             setTimeout(function () {
                 loader.setAttribute('aria-hidden', 'true');
                 loader.style.display = 'none';
-            }, 1900);
+            }, 1600);
         }
     }
 

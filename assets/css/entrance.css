@@ -108,7 +108,7 @@
 /* Animation Trigger State Classes */
 body.is-loading .loader-text {
   animation:
-    typing 1.4s steps(9, end) forwards,
+    typing 1.4s steps(8, end) forwards,
     blink 0.75s step-end infinite;
 }
 

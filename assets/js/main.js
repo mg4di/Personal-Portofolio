@@ -62,8 +62,9 @@ window.addEventListener('scroll', () => {
     function lerp(a, b, t) { return a + (b - a) * t; }
 
     function animate() {
-        currentRX = lerp(currentRX, targetRX, 0.12);
-        currentRY = lerp(currentRY, targetRY, 0.12);
+        // Lowered lerp factor to 0.06 for a smoother glide
+        currentRX = lerp(currentRX, targetRX, 0.06);
+        currentRY = lerp(currentRY, targetRY, 0.06);
 
         card.style.transform =
             `rotateX(${currentRX}deg) rotateY(${currentRY}deg)`;
@@ -129,21 +130,63 @@ AOS.init({
     disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
 
-// ─── Dark / Light Mode Toggle
+// ─── Dark / Light Mode Toggle (With Symmetric Circular View Transition) ───
 const themeToggle = document.getElementById('themeToggle');
 const iconSun = document.getElementById('iconSun');
 const iconMoon = document.getElementById('iconMoon');
 const htmlEl = document.documentElement;
 
 if (themeToggle) {
-    // Load saved preference (default: dark)
     const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme, false);
 
-    themeToggle.addEventListener('click', () => {
+    themeToggle.addEventListener('click', (event) => {
         const isCurrentlyDark = htmlEl.getAttribute('data-theme') !== 'light';
         const nextTheme = isCurrentlyDark ? 'light' : 'dark';
-        applyTheme(nextTheme, true);
+
+        const supportsViewTransitions = 'startViewTransition' in document;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!supportsViewTransitions || prefersReducedMotion) {
+            applyTheme(nextTheme, true);
+            return;
+        }
+
+        // Get the exact center of the page
+        const x = window.innerWidth / 2;
+        const y = window.innerHeight / 2;
+
+        // Calculate maximum radius required to cover the screen
+        const endRadius = Math.hypot(
+            Math.max(x, window.innerWidth - x),
+            Math.max(y, window.innerHeight - y)
+        );
+
+        document.body.classList.add('theme-transitioning');
+
+        const transition = document.startViewTransition(() => {
+            applyTheme(nextTheme, true);
+        });
+
+        transition.ready.then(() => {
+            // Animate clip-path on the new layer expanding outwards from the center of the page
+            const animation = document.documentElement.animate(
+                {
+                    clipPath: [
+                        `circle(0px at ${x}px ${y}px)`,
+                        `circle(${endRadius}px at ${x}px ${y}px)`
+                    ]
+                },
+                {
+                    duration: 400,
+                    pseudoElement: '::view-transition-new(root)'
+                }
+            );
+
+            animation.onfinish = () => {
+                document.body.classList.remove('theme-transitioning');
+            };
+        });
     });
 }
 
@@ -153,11 +196,11 @@ function applyTheme(theme, saveToStorage = true) {
 
     if (iconSun && iconMoon) {
         if (isLight) {
-            iconSun.classList.add('hidden');
-            iconMoon.classList.remove('hidden');
-        } else {
             iconSun.classList.remove('hidden');
             iconMoon.classList.add('hidden');
+        } else {
+            iconSun.classList.add('hidden');
+            iconMoon.classList.remove('hidden');
         }
     }
 
